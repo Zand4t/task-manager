@@ -1,0 +1,24 @@
+
+<h2>What the Hell, it's getting busy</h2>
+
+<ul>
+  <% @tasks.each do |task| %>
+  <li>
+    <p> Odyssey
+      <%= link_to task.name, task_path(task) %>
+
+      <p> Task Description: <%= task.description %> </p>
+      <p>Urgency: <%= task.urgency %></p>
+      <p> Completion: <%= task.completed %> </p>
+      <%= link_to 'Edit', edit_task_path(task) %>
+      <%= link_to 'Delete', task_path(task), method: :delete, data: { confirm: 'You sure bruh?'} %>
+      <% end %>
+    </p>
+
+  </li>
+</ul>
+
+
+<div id='button'>
+<%= link_to 'NEUES AUFGABE', new_task_path %>
+</div>
